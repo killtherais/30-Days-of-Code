@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+
+class Solution {
+    static void Main(string[] args) {
+       
+        Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+
+       
+        int n = int.Parse(Console.ReadLine());
+        for (int i = 0; i < n; i++) {
+            string[] entry = Console.ReadLine().Split(' ');
+            string name = entry[0];
+            string phoneNumber = entry[1];
+            phoneBook[name] = phoneNumber;
+        }
+
+     
+        string queryName;
+        while ((queryName = Console.ReadLine()) != null) {
+            if (phoneBook.ContainsKey(queryName)) {
+              
+                Console.WriteLine(queryName + "=" + phoneBook[queryName]);
+            } else {
+            
+                Console.WriteLine("Not found");
+            }
+        }
+    }
+}
